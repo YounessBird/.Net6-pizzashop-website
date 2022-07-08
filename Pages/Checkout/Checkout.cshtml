@@ -14,6 +14,8 @@ var ImagePath="~/Images/Pizzas/" + @Model.ImageTitle + ".png";
         <p>Your order for the @Model.PizzaName piza is ready! </p>
         <p>Total price for your order is: £@Model.PizzaPrice </p>
         <br />
-        <a class="btn btn-primary mt-1 mx-auto" asp-page="Thankyou">Confirm Order!</a>
     </div>
+    <form action="" method="post" class="mx-auto mt-5 pb-5 mv-5 px-5 rounded-5 alert-light col-4">
+        <button class="btn btn-primary mt-1 mx-auto" type="submit">Order My Pizza</button>
+    </form>
 </div>
