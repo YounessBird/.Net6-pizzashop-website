@@ -13,7 +13,7 @@ public class CheckoutModel : PageModel
     }
 
     public string PizzaName { get; set; }
-    public string PizzaPrice { get; set; }
+    public int PizzaPrice { get; set; }
     public string ImageTitle { get; set; }
 
     public void OnGet()
