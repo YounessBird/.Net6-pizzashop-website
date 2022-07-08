@@ -34,10 +34,10 @@ ViewData["Title"] = "Pizza";
             {
             var ImagePath= "~/images/Pizzas/" + pizza.ImageTitle + ".png";
             <div class=" col-4 mb-5">
-                <img src=@ImagePath alt="" class="w-100" asp-append-version="true" />
-                <a class=" btn btn-primary mt-1" asp-area="" asp-page="Checkout/Checkout"
-                    asp-route-ImageTitle=@pizza.ImageTitle asp-route-PizzaPrice=@pizza.FinalPrice
-                    asp-route-PizzaName=@pizza.PizzaName>Get this pizza</a>
+                <a class="pizza-img" asp-area="" asp-page="Checkout/Checkout" asp-route-ImageTitle=@pizza.ImageTitle
+                    asp-route-PizzaPrice=@pizza.FinalPrice asp-route-PizzaName=@pizza.PizzaName>
+                    <img src=@ImagePath alt="" class="w-100" asp-append-version="true" />
+                </a>
                 <br />
             </div>
             }
