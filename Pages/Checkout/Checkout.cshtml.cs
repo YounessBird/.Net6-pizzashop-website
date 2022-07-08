@@ -3,16 +3,23 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PizzaShop.Pages;
 
+[BindProperties(SupportsGet = true)]
 public class CheckoutModel : PageModel
 {
-    private readonly ILogger<CheckoutModel> _logger;
 
-    public CheckoutModel(ILogger<CheckoutModel> logger)
-    {
-        _logger = logger;
-    }
+    public string PizzaName { get; set; }
+    public string PizzaPrice { get; set; }
+    public string ImageTitle { get; set; }
 
     public void OnGet()
     {
+        if (string.IsNullOrWhiteSpace(PizzaName))
+        {
+            PizzaName = "Custom";
+        }
+        if (string.IsNullOrWhiteSpace(ImageTitle))
+        {
+            ImageTitle = "Create";
+        }
     }
 }

@@ -14,7 +14,6 @@ public class CustomPizzaModel : PageModel
 
     public IActionResult OnPost()
     {
-
         PizzaPrice = Pizza.BasePrice;
         if (Pizza.TomatoSauce) { ++PizzaPrice; }
         if (Pizza.Cheese) { ++PizzaPrice; }
