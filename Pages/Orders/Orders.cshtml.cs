@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-using PizzaShop.Data;
+using PizzaShop.Infrastracture;
 public class OrdersModel : PageModel
 {
     private readonly ApplicationDbContext _context;

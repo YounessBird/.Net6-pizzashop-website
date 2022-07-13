@@ -1,21 +1,24 @@
 @page
-@model CheckoutModel
-@{
-ViewData["Title"] = "Checkout";
-}
+@using Microsoft.Extensions.Options
+@inject IOptions<PizzaShop.Infrastracture.StripeSettings> Stripe
+    @model CheckoutModel
 
-<h1>You Order!</h1>
-@{
-var ImagePath="~/Images/Pizzas/" + @Model.ImageTitle + ".png";
-}
-<div class="align-content-center">
-    <div class="col-3 mx-auto mb-5">
-        <img src=@ImagePath alt="" class="w-100" asp-append-version="true" />
-        <p>Your order for the @Model.PizzaName piza is ready! </p>
-        <p>Total price for your order is: £@Model.PizzaPrice </p>
-        <br />
+
+    <h1>You Order!</h1>
+    @{
+    var ImagePath="~/Images/Pizzas/" + @Model.ImageTitle + ".png";
+    }
+    <div class="align-content-center">
+        <div class="col-3 mx-auto mb-5">
+            <img src=@ImagePath alt="" class="w-100 mb-3" asp-append-version="true" />
+            <p>Your order for the @Model.PizzaName piza is ready! </p>
+            <p>Total price for your order is: £@Model.PizzaPrice </p>
+            <form method="POST">
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="@Stripe.Value.PublishableKey" data-name="PizzaShop"
+                    data-description="Order For @Model.PizzaName Pizza" data-amount="@Model.TotalInPence"
+                    data-currency="gbp" data-locale="en" data-zip-code="true">
+                    </script>
+            </form>
+        </div>
     </div>
-    <form action="" method="post" class="mx-auto mt-5 pb-5 mv-5 px-5 rounded-5 alert-light col-4">
-        <button class="btn btn-primary mt-1 mx-auto" type="submit">Order My Pizza</button>
-    </form>
-</div>
