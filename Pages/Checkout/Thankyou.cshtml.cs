@@ -2,17 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PizzaShop.Pages;
-
+[BindProperties(SupportsGet = true)]
 public class ThankyouModel : PageModel
 {
-    private readonly ILogger<ThankyouModel> _logger;
-
-    public ThankyouModel(ILogger<ThankyouModel> logger)
-    {
-        _logger = logger;
-    }
-
+    public string CustomerName { get; set; }
+    public int AmountPaid { get; set; }
     public void OnGet()
     {
+
     }
 }
