@@ -5,8 +5,5 @@ namespace PizzaShop.Infrastracture
     {
         public string PublishableKey { get; set; }
         public string SecretKey { get; set; }
-
-
-
     }
 }
